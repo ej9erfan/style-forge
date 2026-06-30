@@ -170,6 +170,7 @@ export default function Quiz() {
             <button
               key={opt}
               onClick={() => toggle(opt)}
+              onTouchEnd={(e) => { e.preventDefault(); toggle(opt) }}
               className={`px-4 py-2 rounded-full text-sm border transition-all ${
                 isSelected
                   ? 'bg-pink-50 border-pink-400 text-pink-700'
@@ -185,6 +186,7 @@ export default function Quiz() {
       <div className="flex items-center gap-4">
         <button
           onClick={next}
+          onTouchEnd={(e) => { e.preventDefault(); next() }}
           disabled={selCount === 0}
           className="px-6 py-2.5 rounded-lg bg-pink-500 text-white text-sm font-medium hover:bg-pink-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
         >
